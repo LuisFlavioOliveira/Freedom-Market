@@ -72,7 +72,7 @@ In my `views.py` file, the longest function is listing because it not only displ
 
 
 ## Video Presentation
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/1yfRc8rzqzo/0.jpg)](https://youtu.be/1yfRc8rzqzo "Freedom Market")
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/Xsi_Gaf2_J8/0.jpg)](https://youtu.be/Xsi_Gaf2_J8"Freedom Market")
 
 
 ## Getting Started
