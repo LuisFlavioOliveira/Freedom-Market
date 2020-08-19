@@ -54,7 +54,7 @@ In my `views.py` file, the longest function is listing because it not only displ
 * [BootStrap](https://getbootstrap.com/) - Front-End component (Menu)
 
 
-## Screenshots and video
+## Screenshots
 
 ![HomePage](https://github.com/LuisFlavioOliveira/Freedom-Market/blob/master/screenshots/HomePage.png)
 
@@ -71,6 +71,7 @@ In my `views.py` file, the longest function is listing because it not only displ
 ![Categories](https://github.com/LuisFlavioOliveira/Freedom-Market/blob/master/screenshots/Categories.png)
 
 
+## Video Presentation
 [![IMAGE ALT TEXT](http://img.youtube.com/vi/1yfRc8rzqzo/0.jpg)](https://youtu.be/1yfRc8rzqzo "Freedom Market")
 
 
