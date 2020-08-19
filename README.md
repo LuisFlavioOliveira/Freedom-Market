@@ -56,20 +56,22 @@ In my `views.py` file, the longest function is listing because it not only displ
 
 ## Screenshots and video
 
-![HomePage](https://github.com/LuisFlavioOliveira/Covid-19_Diary/blob/master/screenshots/Index%20page.png)
+![HomePage](https://github.com/LuisFlavioOliveira/Freedom-Market/blob/master/screenshots/HomePage.png)
 
-![Register](https://github.com/LuisFlavioOliveira/Covid-19_Diary/blob/master/screenshots/Sign%20Up.png)
+![Register](https://github.com/LuisFlavioOliveira/Freedom-Market/blob/master/screenshots/Register.png)
 
-![HomePage](https://github.com/LuisFlavioOliveira/Covid-19_Diary/blob/master/screenshots/HomePage.png)
+![ActiveListings](https://github.com/LuisFlavioOliveira/Freedom-Market/blob/master/screenshots/ActiveListings.png)
 
-![Search Result](https://github.com/LuisFlavioOliveira/Covid-19_Diary/blob/master/screenshots/Search%20page.png)
+![Listing](https://github.com/LuisFlavioOliveira/Freedom-Market/blob/master/screenshots/Listing.png)
 
-![Write](https://github.com/LuisFlavioOliveira/Covid-19_Diary/blob/master/screenshots/Write.png)
+![Expired](https://github.com/LuisFlavioOliveira/Freedom-Market/blob/master/screenshots/Expired.png)
 
-![Diary](https://github.com/LuisFlavioOliveira/Covid-19_Diary/blob/master/screenshots/Diary.png)
+![Comments](https://github.com/LuisFlavioOliveira/Freedom-Market/blob/master/screenshots/Comments.png)
 
-![Video](https://youtu.be/1yfRc8rzqzo)
+![Categories](https://github.com/LuisFlavioOliveira/Freedom-Market/blob/master/screenshots/Categories.png)
 
+
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/1yfRc8rzqzo/0.jpg)](https://youtu.be/1yfRc8rzqzo "Freedom Market")
 
 
 ## Getting Started
