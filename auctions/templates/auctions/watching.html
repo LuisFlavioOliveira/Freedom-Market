@@ -1,0 +1,23 @@
+{% extends "auctions/layout.html" %}
+{% block title %}Watchlist{% endblock %}
+{% block body %}
+{% for watching in watchings %}
+<a href="{% url 'listings' watching.id %}">
+    <div class="media border_container">
+        <img src="{{ watching.image_url }}" alt="Product image. It's a {{ watching.title }}" class="mr-3" width="500"
+            height="300">
+        <div class="media-body">
+            <h5 class="mt-0">{{ watching.title }}</h5>
+            <label class="price_label">Price:</label> ${{ watching.product_price }}
+            <p class="date_paragraph">Created {{ watching.auction_date }}</p>
+        </div>
+    </div>
+</a>
+<br>
+
+{% empty %}
+<h3 style="text-align: center; color: black">You haven't yet add any listing to your watchlist.</h3>
+
+{% endfor %}
+
+{% endblock %}

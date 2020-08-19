@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Freedom Market</title>
+  <link href="/static/auctions/images/eagle.svg" rel="icon">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="static/auctions/fonts/icomoon/style.css">
+
+  <link rel="stylesheet" href="static/auctions/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/auctions/css/jquery-ui.css">
+  <link rel="stylesheet" href="static/auctions/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="static/auctions/css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="static/auctions/css/owl.theme.default.min.css">
+
+  <link rel="stylesheet" href="static/auctions/css/jquery.fancybox.min.css">
+
+  <link rel="stylesheet" href="static/auctions/css/bootstrap-datepicker.css">
+
+  <link rel="stylesheet" href="static/auctions/fonts/flaticon/font/flaticon.css">
+
+  <link rel="stylesheet" href="static/auctions/css/aos.css">
+
+  <link rel="stylesheet" href="static/auctions/css/style.css">
+
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+
+  <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+  <div class="site-wrap" id="home-section">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+
+    <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+
+      <div class="container">
+        <div class="row align-items-center">
+
+          <div class="col-6 col-md-3 col-xl-4  d-block">
+            <a class="mb-0 site-logo" href="{% url 'index' %}"><img src="static/auctions/images/Logo.png" width="100%"
+                height="100" alt="The Freedom Market logo" loading="lazy">
+          </div>
+
+          <div class="col-12 col-md-9 col-xl-8 main-menu">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+
+              <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block ml-0 pl-0">
+                <li><a href="{% url 'index' %}" class="nav-link">Home</a></li>
+                <li><a href="#about-section" class="nav-link">About</a></li>
+                <li><a href="{% url 'login' %}" class="nav-link">Log In</a></li>
+                <li><a href="{% url 'register' %}" class="nav-link">Register</a></li>
+              </ul>
+            </nav>
+          </div>
+
+
+          <div class="col-6 col-md-9 d-inline-block d-lg-none ml-md-0"><a href="#"
+              class="site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+
+    <div class="site-blocks-cover" style="overflow: hidden;">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+
+          <div class="col-md-12" style="position: relative;" data-aos="fade-up" data-aos-delay="200">
+
+            <img src="static/auctions/images/undraw_investing_7u74.svg" alt="Image" class="img-fluid img-absolute">
+
+            <div class="row mb-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-lg-6 mr-auto">
+                <h1>The true free online market for auctions.</h1>
+                <p class="mb-5">Sell and buy whatever you want with Freedom Market in a fair way.</p>
+                <div>
+                  <a href="{% url 'register' %}" class="btn btn-primary mr-2 mb-2">Get Started</a>
+                </div>
+              </div>
+
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="site-section" id="features-section">
+      <div class="container">
+        <div class="row mb-5 justify-content-center text-center" data-aos="fade-up">
+          <div class="col-7 text-center  mb-5">
+            <h2 class="section-title">Ideology</h2>
+            <p class="lead">Freedom Market believes we all should be able to buy and sell whatever we want through
+              auctions.</p>
+          </div>
+        </div>
+        <div class="row align-items-stretch">
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up">
+
+            <div class="unit-4 d-block">
+              <div class="unit-4-icon mb-3">
+                <span class="icon-wrap"><span class="text-primary icon-autorenew"></span></span>
+              </div>
+              <div>
+                <h3>Free</h3>
+                <p>We do not charge our customers to buy or sell anything on our website. We believe in the free market
+                  idea.</p>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="unit-4 d-block">
+              <div class="unit-4-icon mb-3">
+                <span class="icon-wrap"><span class="text-primary icon-store_mall_directory"></span></span>
+              </div>
+              <div>
+                <h3>Online Market</h3>
+                <p>The platform of Freedom Market is 100% online and it allows users from all around the world to join
+                  us. </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="unit-4 d-block">
+              <div class="unit-4-icon mb-3">
+                <span class="icon-wrap"><span class="text-primary icon-shopping_basket"></span></span>
+              </div>
+              <div>
+                <h3>Auctions</h3>
+                <p>You just need to create an account to start selling or buying products using you online auctions
+                  system.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-big">
+      <div class="container">
+        <div class="row mb-5 site-section">
+          <div class="col-lg-7" data-aos="fade-right">
+            <img src="static/auctions/images/undraw_gift_card_6ekc.svg" alt="Image" class="img-fluid">
+          </div>
+          <div class="col-lg-5 pl-lg-5 ml-auto mt-md-5">
+            <h2 class="text-black">Innovation and Technology</h2>
+            <p class="mb-4">We truly believe technology is the key world for the development of our society. Our team is
+              composed of tech enthusiasts that are always working to improve our platform with the newest technologies.
+            </p>
+
+            <div class="author-box" data-aos="fade-left">
+              <div class="d-flex mb-4">
+                <div class="mr-3">
+                  <img src="static/auctions/images/person_4.jpg" alt="Image" class="img-fluid rounded-circle">
+                </div>
+                <div class="mr-auto text-black">
+                  <strong class="font-weight-bold mb-0">Luis Oliveira</strong> <br>
+                  Founder, Freedom Market.
+                </div>
+              </div>
+              <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus vitae ipsa asperiores
+                inventore aperiam iure?&rdquo;</blockquote>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-5 row mb-5 site-section ">
+          <div class="col-lg-7 order-1 order-lg-2" data-aos="fade-left">
+            <img src="static/auctions/images/undraw_metrics_gtu7.svg" alt="Image" class="img-fluid">
+          </div>
+          <div class="col-lg-5 pr-lg-5 mr-auto mt-5 order-2 order-lg-1">
+            <h2 class="text-black">Security and Privacy</h2>
+            <p class="mb-4">Our website is built using the most sophisticated techniques of security to guarantee the
+              protection of your personal and financial information. While you use our website to buy and sell products,
+              you're protected by many security systems that are acting "under the hood". Also, we do not collect data
+              or private information about you, if you want to know more about how we treat your personal information
+              check out our<a href="#">Privacy Policy.</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="site-section bg-light" id="about-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="section-title mb-3">About Us</h2>
+          </div>
+        </div>
+        <div class="row mb-5">
+          <div class="col-lg-6" data-aos="fade-right">
+            <img src="static/auctions/images/undraw_bookmarks_r6up.svg" alt="Image" class="img-fluid">
+          </div>
+          <div class="col-lg-5 ml-auto pl-lg-5">
+            <h2 class="text-black mb-4 h3 font-weight-bold">Our Mission</h2>
+            <p class="mb-4">Freedom Market was created to be a free market for all of us, we do not make a distinction
+              between nationalities, creed, skin colour or gender. We are here to be a free place where humans can trade
+              and help to move on the economic wheel. That's our mission, that's our ideology.</p>
+            <ul class="ul-check mb-5 list-unstyled success">
+              <li>Auctions Market</li>
+              <li>100% Free</li>
+              <li>100% Online</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="site-section testimonial-wrap bg-light" id="testimonials-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="section-title mb-3">Testimonials</h2>
+          </div>
+        </div>
+      </div>
+      <div class="slide-one-item home-slider owl-carousel">
+        <div>
+          <div class="testimonial">
+            <figure class="mb-4 d-block align-items-center justify-content-center">
+              <div><img src="static/auctions/images/person_3.jpg" alt="Image" class="w-100 img-fluid mb-3 shadow"></div>
+            </figure>
+            <blockquote class="mb-3">
+              <p>&ldquo;I was searching for an ancient greek book that I couldn't find anywhere. Then, I found it on
+                Freedom Market, it was being sold by someone directly from Greece! Luck I am, I did a bit and the seller
+                accepted and I've received the book in 2 weeks! Amazing!.&rdquo;</p>
+            </blockquote>
+            <p class="text-black"><strong>John Smith</strong></p>
+
+
+          </div>
+        </div>
+        <div>
+          <div class="testimonial">
+
+            <figure class="mb-4 d-block align-items-center justify-content-center">
+              <div><img src="static/auctions/images/person_2.jpg" alt="Image" class="w-100 img-fluid mb-3 shadow"></div>
+            </figure>
+
+            <blockquote class="mb-3">
+              <p>&ldquo;Since 3 years I was looking for a PlayStation 1 to buy. I've searched on Google, eBay,
+                Craigslist and all those other creepy websites. But one day, a friend told me about Freedom Market and I
+                went to check out. I found a Brazilian guy selling it in an auction, so I did my bid and I got it!
+                .&rdquo;</p>
+            </blockquote>
+
+            <p class="text-black"><strong>Robert Aguilar</strong></p>
+
+
+          </div>
+        </div>
+
+        <div>
+          <div class="testimonial">
+            <figure class="mb-4 d-block align-items-center justify-content-center">
+              <div><img src="static/auctions/images/person_4.jpg" alt="Image" class="w-100 img-fluid mb-3 shadow"></div>
+            </figure>
+            <blockquote class="mb-3">
+              <p>&ldquo;I sold all my coins collection on Freedom Market. I had more than 12.000 coins and I decided to
+                put it in auctions on the website. For my surprise, someone ended up paying $120.000 for it. It was
+                super cool!.&rdquo;</p>
+            </blockquote>
+            <p class="text-black"><strong>Roger Spears</strong></p>
+
+
+          </div>
+
+        </div>
+
+        <div>
+          <div class="testimonial">
+            <figure class="mb-4 d-block align-items-center justify-content-center">
+              <div><img src="static/auctions/images/person_1.jpg" alt="Image" class="w-100 img-fluid mb-3 shadow"></div>
+            </figure>
+            <blockquote class="mb-3">
+              <p>&ldquo;One day I found this old Led Zeppelin CD from my father and I decided to sell it on Freedom
+                Market. The starting bid was $10 but it seems it was a very rare CD and at the end of my auction, I got
+                $1.000 for it! Thanks, Freedom Market!.&rdquo;</p>
+            </blockquote>
+            <p class="text-black"><strong>Kyle McDonald</strong></p>
+
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="footer py-5 text-center">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12">
+            <p class="mb-0">
+              <a href="#" class="p-3"><span class="icon-facebook"></span></a>
+              <a href="#" class="p-3"><span class="icon-twitter"></span></a>
+              <a href="#" class="p-3"><span class="icon-instagram"></span></a>
+              <a href="#" class="p-3"><span class="icon-linkedin"></span></a>
+              <a href="#" class="p-3"><span class="icon-pinterest"></span></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="static/auctions/js/jquery-3.3.1.min.js"></script>
+    <script src="static/auctions/js/jquery-ui.js"></script>
+    <script src="static/auctions/js/popper.min.js"></script>
+    <script src="static/auctions/js/bootstrap.min.js"></script>
+    <script src="static/auctions/js/owl.carousel.min.js"></script>
+    <script src="static/auctions/js/jquery.countdown.min.js"></script>
+    <script src="static/auctions/js/bootstrap-datepicker.min.js"></script>
+    <script src="static/auctions/js/jquery.easing.1.3.js"></script>
+    <script src="static/auctions/js/aos.js"></script>
+    <script src="static/auctions/js/jquery.fancybox.min.js"></script>
+    <script src="static/auctions/js/jquery.sticky.js"></script>
+
+
+    <script src="static/auctions/js/main.js"></script>
+
+</body>
+
+</html>

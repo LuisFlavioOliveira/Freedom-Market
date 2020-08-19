@@ -1,0 +1,28 @@
+{% extends 'auctions/layout.html' %}
+
+{% block title %}Create a new list{% endblock %}
+
+{% block body %}
+
+<br>
+
+<h1 style="text-align: center; color: black">Create a new list</h1>
+
+<div class="col-lg-7 order-1 order-lg-2" data-aos="fade-left" style="float: right; width: 600px; top: 40px;">
+  <img src="static/auctions/images/landing_1.png" alt="Image" class="img-fluid">
+</div>
+
+<div>
+  <form action="{% url 'create_list' %}" method="post">
+    <div class="form-group col-md-6">
+      {% csrf_token %}
+      {{ form }}
+
+      <br>
+
+      <input class="btn btn-primary" type="submit" value="Create">
+    </div>
+  </form>
+</div>
+
+{% endblock %}

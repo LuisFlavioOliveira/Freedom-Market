@@ -1,0 +1,237 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %}Listing{% endblock %}
+
+
+{% block body %}
+
+<!-- This code display the close auction -->
+{% if listing.status == True %}
+<div>
+    <!-- This snippet is responsible to display the warning and success messages -->
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible text-center">
+        <p class="close" data-dismiss="alert"></p>
+        {{ message }}
+    </div>
+    {% endfor %}
+
+    <!-- Display winner message -->
+    {% if winner == True %}
+    <div style="text-align: center" class="alert alert-success" role="alert">
+        You WON this auction! Congratulations!! The final bid was ${{ current_bid }}.
+    </div>
+    {% endif %}
+
+    <!-- If the user closed the auction before anyone could do a bid -->
+    {% if no_winner == True and listing.created_by == user %}
+    <div class="alert alert-warning" style="text-align: center" role="alert">
+        No winners of this auction. You closed it before anyone could do a bid.
+    </div>
+    {% endif %}
+
+    <!-- Displays message saying the bid is closed -->
+    {% if winner == False and listing.created_by != user %}
+    <div style="text-align: center" class="alert alert-danger" role="alert">
+        This auction is closed. The final bid was ${{ current_bid }}.
+    </div>
+    {% endif %}
+
+    <!-- Watchlist button -->
+    <div style="padding-left: 20px;">
+        <form action="{% url 'watchlist' listing.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-info">Watchlist</button>
+        </form>
+
+        <br>
+
+        <!-- Expired badge -->
+        <h2 style="color: black">{{ listing.title }}</h2>
+        <span class="badge badge-danger">Expired</span>
+
+        <br>
+        <br>
+
+        <!-- Auction details card -->
+        <div style="padding-right: 200px;">
+            <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 38rem; float: right;">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: black">Description</h5>
+                    <p class="card-text">{{ listing.description }}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" style="color: black">Starting Bid: <b>${{ listing.product_price }}</b>
+                    </li>
+                    <li class="list-group-item" style="color: black">Listed by: <a href="#">{{ listing.created_by }}</a>
+                    </li>
+                    <li class="list-group-item" style="color: black">Created on: <i>{{ listing.auction_date }}</i></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Displays either product's image if provided or no-image -->
+        {% if listing.image_url %}
+        <img src="{{ listing.image_url }}" alt="Product image. It's a {{ product.title }}" class="mr-3" width="500"
+            height="400">
+        {% else %}
+        <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fmoorestown-mall.com%2Fnoimage.gif&f=1&nofb=1"
+            alt="The user didn't provide an image" class="mr-3" width="500" height="400">
+        {% endif %}
+
+        <br>
+        <br>
+        <br>
+
+        <!-- Comments div -->
+        <div>
+            <br>
+            <h3 style="color: black">Add a public comment</h3>
+            <form action="{% url 'comments' listing.id %}" method="post">
+                {% csrf_token %}
+                {{ comments_form }}
+                <br>
+                <input class="btn btn-primary mr-2 mb-2" type="submit" value="Submit comment">
+            </form>
+
+            <br>
+
+            <h2 style="color: black">Last Comments</h2>
+            {% for comment in get_comments %}
+            <div class="card">
+                <div class="card-header" style="color: blue; font-weight: bold">
+                    {{ comment.user }}
+                </div>
+                <div class="card-body shadow p-3 mb-5 bg-white rounded">
+                    <blockquote class="blockquote mb-0" style="color: black">
+                        <p>{{ comment.comments }}</p>
+                        <footer class="blockquote-footer"> At {{ comment.commented_date }}
+                    </blockquote>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+<!-- END -->
+
+
+
+<!-- This code displays the auction when it's open  -->
+{% else %}
+<div>
+    <!-- This snippet is responsible to display the warning and success messages -->
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible text-center">
+        <p class="close" data-dismiss="alert"></p>
+        {{ message }}
+    </div>
+    {% endfor %}
+
+    <br>
+
+    <!-- Close button -->
+    <div style="padding-left: 20px;">
+        {% if user_creator == True %}
+        <form action="{% url 'close_listing' listing.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-warning">Close Auction</button>
+        </form>
+
+        <br>
+        <!-- Watchlist button -->
+        {% else %}
+        <form action="{% url 'watchlist' listing.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-info">Watchlist</button>
+        </form>
+
+        <br>
+        {% endif %}
+
+        <!-- Active badge -->
+        <h2 style="color: black">{{ listing.title }}</h2>
+        <span class="badge badge-success">Active</span>
+
+        <br>
+        <br>
+
+        <!-- Auction details card -->
+        <div style="padding-right: 200px;">
+            <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 38rem; float: right;">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: black">Description</h5>
+                    <p class="card-text">{{ listing.description }}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" style="color: black">Starting Bid: <b>${{ listing.product_price }}</b>
+                    </li>
+                    <li class="list-group-item" style="color: black">Listed by: <a href="#">{{ listing.created_by }}</a>
+                    </li>
+                    <li class="list-group-item" style="color: black">Created on: <i>{{ listing.auction_date }}</i></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Displays either product's image if provided or no-image -->
+        {% if listing.image_url %}
+        <img src="{{ listing.image_url }}" alt="Product image. It's a {{ product.title }}" class="mr-3" width="500"
+            height="400">
+        {% else %}
+        <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fmoorestown-mall.com%2Fnoimage.gif&f=1&nofb=1"
+            alt="The user didn't provide an image" class="mr-3" width="500" height="400">
+        {% endif %}
+
+        <br>
+        <br>
+        <br>
+
+        <!-- Bids form-->
+        <form action="{% url 'listings' listing.id %}" method="post">
+            <span>{{ bids_quantity }} bid(s) so far. {% if is_current_bid == True %} Your bid of ${{ current_bid }} is
+                the current bid. {% else %}
+                Your bid is NOT the current bid. The current bid is ${{ current_bid }}{% endif %}</span>
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <input class="btn btn-primary mr-2 mb-2" type="submit" value="Bid">
+        </form>
+
+        <br>
+
+
+        <!-- Comments div -->
+        <div>
+            <br>
+            <h3 style="color: black">Add a public comment</h3>
+            <form action="{% url 'comments' listing.id %}" method="post">
+                {% csrf_token %}
+                {{ comments_form }}
+                <br>
+                <input class="btn btn-primary mr-2 mb-2" type="submit" value="Submit comment">
+            </form>
+
+            <br>
+
+            <h2 style="color: black">Last Comments</h2>
+            {% for comment in get_comments %}
+            <div class="card">
+                <div class="card-header" style="color: blue; font-weight: bold">
+                    {{ comment.user }}
+                </div>
+                <div class="card-body shadow p-3 mb-5 bg-white rounded">
+                    <blockquote class="blockquote mb-0" style="color: black">
+                        <p>{{ comment.comments }}</p>
+                        <footer class="blockquote-footer"> At {{ comment.commented_date }}
+                    </blockquote>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+{% endif %}
+<!-- END  -->
+{% endblock %}

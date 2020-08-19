@@ -1,0 +1,35 @@
+{% extends "auctions/layout.html" %}
+{% block title %}Active listings{% endblock %}
+{% block body %}
+
+<br>
+<div>
+    <h2 style="text-align: center; color: black">Active Listings</h2>
+    <br>
+
+    {% for auction in auctions %}
+    <a href="{% url 'listings' auction.id %}">
+        <div class="media border_container">
+            {% if auction.image_url %}
+            <img src="{{ auction.image_url }}" alt="Product image. It's a {{ auction.title }}" class="mr-3" width="600"
+                height="400">
+            {% else %}
+            <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fmoorestown-mall.com%2Fnoimage.gif&f=1&nofb=1"
+                alt="The user didn't provide an image" class="mr-3" width="500" height="500">
+            {% endif %}
+            <div class="media-body">
+                <h5 class="mt-0">{{ auction.title }}</h5>
+                <label class="price_label">Starting bid:</label> ${{ auction.product_price }}
+                <p class="date_paragraph">Created on {{ auction.auction_date }}</p>
+            </div>
+        </div>
+    </a>
+    <br>
+
+    {% empty %}
+    <h3 style="text-align: center; color: black">There isn't any active auction for the moment.</h3>
+
+    {% endfor %}
+</div>
+
+{% endblock %}
